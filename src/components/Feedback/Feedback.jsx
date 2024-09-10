@@ -1,21 +1,19 @@
-import PropTypes from "prop-types"; // Імпортуємо PropTypes
 import styles from "./Feedback.module.css";
 
-export default function Feedback({ feedback }) {
+export default function Feedback({
+  feedback,
+  totalFeedback,
+  positiveFeedback,
+}) {
   return (
     <div className={styles.container}>
       <p>Good: {feedback.good}</p>
       <p>Neutral: {feedback.neutral}</p>
       <p>Bad: {feedback.bad}</p>
+      <p>Total: {totalFeedback}</p>
+      <p>Positive: {positiveFeedback}%</p>
     </div>
   );
 }
 
-// Додаємо валідацію пропсів
-Feedback.propTypes = {
-  feedback: PropTypes.shape({
-    good: PropTypes.number.isRequired,
-    neutral: PropTypes.number.isRequired,
-    bad: PropTypes.number.isRequired,
-  }).isRequired,
-};
+

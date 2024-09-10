@@ -1,37 +1,31 @@
-import PropTypes from "prop-types";
 import styles from "./Options.module.css";
 
-export default function Options({ onFeedbackChange }) {
+export default function Options({
+  updateFeedback,
+  resetFeedBack,
+  totalFeedBack,
+}) {
   return (
-    <div className={styles.container}>
+    <div>
       <button
-        onClick={() => onFeedbackChange("good")}
+        onClick={() => updateFeedback("good")}
         className={styles.buttonGood}
       >
         Good
       </button>
       <button
-        onClick={() => onFeedbackChange("neutral")}
+        onClick={() => updateFeedback("neutral")}
         className={styles.buttonNeutral}
       >
         Neutral
       </button>
       <button
-        onClick={() => onFeedbackChange("bad")}
+        onClick={() => updateFeedback("bad")}
         className={styles.buttonBad}
       >
         Bad
       </button>
-      <button
-        onClick={() => onFeedbackChange("reset")}
-        className={styles.buttonReset}
-      >
-        Reset
-      </button>
+      {totalFeedBack > 0 && <button onClick={resetFeedBack}>Reset</button>}
     </div>
   );
 }
-
-Options.propTypes = {
-  onFeedbackChange: PropTypes.func.isRequired,
-};
