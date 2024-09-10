@@ -41,6 +41,12 @@
   color: #888;
 }
 
-.fullContainer {
-  margin: 20px 30px;
+.wholeContainer {
+  margin-top: 50px;
+  margin-left: 50px;
+  border: #646cffaa 5px solid;
+  border-radius: 10px;
+  padding: 20px 20px;
+  width: 500px;
+  background-color: aliceblue;
 }

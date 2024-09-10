@@ -2,11 +2,11 @@ import styles from "./Options.module.css";
 
 export default function Options({
   updateFeedback,
-  resetFeedBack,
-  totalFeedBack,
+  resetFeedback,
+  totalFeedback,
 }) {
   return (
-    <div>
+    <div className={styles.container}>
       <button
         onClick={() => updateFeedback("good")}
         className={styles.buttonGood}
@@ -25,7 +25,7 @@ export default function Options({
       >
         Bad
       </button>
-      {totalFeedBack > 0 && <button onClick={resetFeedBack}>Reset</button>}
+      {totalFeedback > 0 && <button onClick={resetFeedback}>Reset</button>}
     </div>
   );
 }

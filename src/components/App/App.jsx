@@ -3,6 +3,7 @@ import Description from "../Description/Description.jsx";
 import Options from "../Options/Options.jsx";
 import Feedback from "../Feedback/Feedback.jsx";
 import Notification from "../Notification/Notification.jsx";
+import styles from "./App.module.css";
 
 export default function App() {
   const state = {
@@ -39,7 +40,7 @@ export default function App() {
   const positiveFeedback = Math.round((feedback.good / totalFeedback) * 100);
 
   return (
-    <>
+    <div className={styles.wholeContainer}>
       <Description />
       <Options
         updateFeedback={updateFeedback}
@@ -56,6 +57,6 @@ export default function App() {
       ) : (
         <Notification message="No feedback given yet" />
       )}
-    </>
+    </div>
   );
 }
